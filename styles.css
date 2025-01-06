@@ -1,0 +1,218 @@
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    padding: 5%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #4E5054;
+    }
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+    color: #ffca8d;
+    line-height: 2;
+    list-style: none;
+    text-decoration: none;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #252525;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #ebb96d;
+}
+
+nav a:hover {
+    filter: brightness(1.75);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(35, 35, 35, 0.635);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    backdrop-filter: blur(15px);
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media(max-width: 1100px) {
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+
+
+/* Main content */
+main {
+    padding: 3%;
+    text-align: center;
+    margin-top: 25px;
+   
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section:nth-child(odd) {
+    background: #393939;
+}
+
+section:nth-child(even) {
+    background: #28292b;
+}
+
+/* Gallery Section */
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.project-img {
+    width: 100%; /* Makes the image take up the full width of its container */
+    height: 100%; /* Maintains the aspect ratio */
+    max-width: 245px; /* Optional: Limit the size of the image */
+    max-height: 245px;
+    border-radius: 8px; /* Keeps the rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+    object-fit: cover; /* Ensures the entire image fits within its box */
+}
+
+.project-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Example drop shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: flex;
+    border-radius: 8px;
+}
+
+#modal-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#caption {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    display: none;
+    
+    
+}
+
+#modal-img-container {
+    display: flex;
+    flex-direction: column; /* Stack the image and caption vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #1d1d1d;
+    color: white;
+    padding: 1rem;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
