@@ -84,6 +84,7 @@ nav a:hover {
 
 .menu-button {
     display: none;
+    filter: invert(75%);
 }
 
 @media(max-width: 1100px) {
