@@ -48,6 +48,36 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+// Variables for swipe detection
+let startX = 0; // Track the start position of swipe
+let endX = 0;   // Track the end position of swipe
+
+// Function to handle swipe
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum swipe distance
+    if (startX - endX > swipeThreshold) {
+        // Swipe left, go to next image
+        currentIndex = (currentIndex + 1) % images.length;
+        modalImg.src = images[currentIndex].src;
+        captionText.innerHTML = images[currentIndex].alt;
+    } else if (endX - startX > swipeThreshold) {
+        // Swipe right, go to previous image
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        modalImg.src = images[currentIndex].src;
+        captionText.innerHTML = images[currentIndex].alt;
+    }
+}
+
+// Add touch event listeners for swipe detection
+modal.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX; // Capture the starting X position of the swipe
+});
+
+modal.addEventListener("touchend", (event) => {
+    endX = event.changedTouches[0].clientX; // Capture the ending X position of the swipe
+    handleSwipe(); // Determine swipe direction and change image
+});
+
 // Function to close modal on clicking outside the image
 
 modal.addEventListener('click', (e) => {
@@ -83,3 +113,19 @@ document.addEventListener("scroll", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const projectImages = document.querySelectorAll(".project-img");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible"); // Trigger fade-in
+                observer.unobserve(entry.target); // Stop observing after animation
+            }
+        });
+    });
+
+    projectImages.forEach(image => observer.observe(image));
+});
+

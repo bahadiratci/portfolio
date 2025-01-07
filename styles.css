@@ -5,8 +5,9 @@
 }
 
 h2 {
-    padding: 5%;
+    padding-bottom: 2%;
 }
+
 
 .header {
     position: sticky;
@@ -17,7 +18,7 @@ h2 {
     }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", serif;
     margin: 0;
     padding: 0;
     background-color: #181818;
@@ -47,11 +48,12 @@ nav li {
 
 nav a {
     height: 100%;
-    padding: 0 30px;
+    padding: 0 20px;
     text-decoration: none;
     display: flex;
     align-items: center;
     color: #ebb96d;
+    transition: filter 0.3s ease;
 }
 
 nav a:hover {
@@ -76,6 +78,7 @@ nav a:hover {
 
 .sidebar li {
     width: 100%;
+    
 }
 
 .sidebar a {
@@ -85,9 +88,10 @@ nav a:hover {
 .menu-button {
     display: none;
     filter: invert(75%);
+
 }
 
-@media(max-width: 1100px) {
+@media(max-width: 1050px) {
     .hideOnMobile{
         display: none;
     }
@@ -99,23 +103,32 @@ nav a:hover {
 
 /* Main content */
 main {
-    padding: 3%;
+    padding: 5%;
     text-align: center;
     margin-top: 25px;
    
 }
 
+#about {
+    background-color: #181818;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    padding-top: 5%;
+}
+
 section {
-    padding: 40px 20px;
     text-align: center;
 }
 
 section:nth-child(odd) {
     background: #393939;
+    padding: 2%;
 }
 
 section:nth-child(even) {
     background: #28292b;
+    padding: 2%;
 }
 
 /* Gallery Section */
@@ -127,20 +140,32 @@ section:nth-child(even) {
 }
 
 .project-img {
-    width: 100%; /* Makes the image take up the full width of its container */
-    height: 100%; /* Maintains the aspect ratio */
-    max-width: 245px; /* Optional: Limit the size of the image */
-    max-height: 245px;
-    border-radius: 8px; /* Keeps the rounded corners */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
-    object-fit: cover; /* Ensures the entire image fits within its box */
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 200px;
+    border-radius: 2px;
+    transition: box-shadow 0.1s ease, opacity 0.8s ease-out, transform 0.1s ease-out, filter 0.1s ease-out;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Slightly lower position */
+}
+
+.project-img.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Return to original position */
 }
 
 .project-img:hover {
     transform: scale(1.03);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Example drop shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    filter: contrast(125%);
+    filter: brightness(125%);
 }
+
 
 
 
@@ -174,13 +199,7 @@ section:nth-child(even) {
 }
 
 #caption {
-    text-align: center;
-    color: white;
-    font-size: 18px;
-    padding: 10px;
     display: none;
-    
-    
 }
 
 #modal-img-container {
