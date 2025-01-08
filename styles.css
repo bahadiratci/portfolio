@@ -7,8 +7,7 @@
 h2 {
     padding-bottom: 2%;
 }
-
-
+    
 .header {
     position: sticky;
     top: 0;
@@ -166,8 +165,6 @@ section:nth-child(even) {
     filter: contrast(125%);
     filter: brightness(125%);
 }
-
-
 
 
 /* Modal Styles */
