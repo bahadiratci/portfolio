@@ -8,9 +8,6 @@ h2 {
     padding-bottom: 2%;
 }
 
-p {
-    text-align: start;
-}
 
 .header {
     position: sticky;
@@ -118,6 +115,7 @@ main {
     padding-right: 10%;
     padding-bottom: 10%;
     padding-top: 5%;
+    text-align: start;
 }
 
 section {
