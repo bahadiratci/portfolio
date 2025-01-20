@@ -8,6 +8,17 @@ h2 {
     padding-bottom: 2%;
     color: #ffce8d;
 }
+
+nav :first-child {
+    margin-right: auto;
+    padding-left: 35px;
+
+}
+
+.logo {
+    width: 135px;
+    height: auto;
+}
     
 .header {
     position: sticky;
@@ -31,7 +42,7 @@ body {
 
 nav {
     background-color: #252525;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -129,13 +140,15 @@ section {
 }
 
 section:nth-child(odd) {
-    background: #393939;
+    background: #222222;
     padding: 2%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 section:nth-child(even) {
-    background: #28292b;
+    background: #2a2a2a;
     padding: 2%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.);
 }
 
 /* Gallery Section */
