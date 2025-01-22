@@ -76,7 +76,7 @@ nav a:hover {
     top: 0;
     right: 0;
     height: 430px;
-    width: 250px;
+    width: 230px;
     z-index: 999;
     background-color: rgba(18, 18, 18, 0.635);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
@@ -95,7 +95,6 @@ nav a:hover {
 .sidebar a {
     width: 100%;
 }
-
 
 .menu-button {
     display: none;
