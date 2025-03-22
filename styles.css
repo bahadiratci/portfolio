@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+p {
+    color: antiquewhite;
+    padding-bottom: 35px;
+}
+
 h2 {
     padding-bottom: 2%;
     color: #ffce8d;
@@ -120,19 +125,6 @@ main {
    
 }
 
-#contact {
-    background-color: #292929;
-}
-
-#about {
-    background-color: #181818;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    padding-top: 35px;
-    text-align: start;
-    color: antiquewhite;
-}
 
 section {
     text-align: center;
@@ -140,13 +132,13 @@ section {
 
 section:nth-child(odd) {
     background: #222222;
-    padding: 2%;
+    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 section:nth-child(even) {
     background: #2a2a2a;
-    padding: 2%;
+    padding: 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.);
 }
 
@@ -155,14 +147,14 @@ section:nth-child(even) {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .project-img {
     width: 100%;
     height: 100%;
     max-width: 150px;
-    max-height: 200px;
+    max-height: 300px;
     border-radius: 2px;
     transition: box-shadow 0.1s ease, opacity 0.8s ease-out, transform 0.1s ease-out, filter 0.1s ease-out;
     object-fit: cover;
