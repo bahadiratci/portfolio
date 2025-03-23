@@ -1,4 +1,12 @@
 /* General Layout */
+
+.molengo-regular {
+    font-family: "Molengo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +15,13 @@
 p {
     color: antiquewhite;
     padding-bottom: 35px;
+    font-family: "Molengo", sans-serif;
 }
 
 h2 {
-    padding-bottom: 2%;
+    padding-bottom: 2px;
     color: #ffce8d;
+    font-family: "Molengo", sans-serif;
 }
 
 nav :first-child {
@@ -77,10 +87,11 @@ nav a:hover {
 }
 
 .sidebar {
+    font-family: "Molengo", sans-serif;
     position: fixed;
     top: 0;
     right: 0;
-    height: 430px;
+    height: 390px;
     width: 230px;
     z-index: 999;
     background-color: rgba(18, 18, 18, 0.635);
@@ -133,12 +144,14 @@ section {
 section:nth-child(odd) {
     background: #222222;
     padding: 20px;
+    padding-bottom: 35px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 section:nth-child(even) {
     background: #2a2a2a;
     padding: 25px;
+    padding-bottom: 35px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.);
 }
 
@@ -147,14 +160,14 @@ section:nth-child(even) {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .project-img {
     width: 100%;
     height: 100%;
-    max-width: 150px;
-    max-height: 300px;
+    max-width: 130px;
+    max-height: 340px;
     border-radius: 2px;
     transition: box-shadow 0.1s ease, opacity 0.8s ease-out, transform 0.1s ease-out, filter 0.1s ease-out;
     object-fit: cover;
