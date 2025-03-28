@@ -176,6 +176,7 @@ section:nth-child(even) {
     max-height: 340px;
     transition: box-shadow 0.1s ease, opacity 0.8s ease-out, transform 0.1s ease-out, filter 0.1s ease-out;
     object-fit: cover;
+    object-position: top;
     aspect-ratio: 3 / 4;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.479);
     opacity: 0; /* Initially hidden */
