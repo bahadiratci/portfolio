@@ -97,8 +97,8 @@ nav a:hover {
     position: fixed;
     top: 0;
     right: 0;
-    height: 390px;
-    width: 230px;
+    height: 320px;
+    width: 200px;
     z-index: 999;
     background-color: rgba(18, 18, 18, 0.952);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
@@ -257,7 +257,6 @@ footer {
     color: white;
     padding-top: 25px;
 }
-
 
 
 
