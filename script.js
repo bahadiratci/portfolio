@@ -99,3 +99,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     projectImages.forEach(image => observer.observe(image));
 });
+
+// For Contact Form
+
+ (function () {
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    if (!form) return; // safety
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();                 // stops the page from leaving
+      status.textContent = "Sending...";
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          status.textContent = "Thanks! Your message has been sent ✅";
+          form.reset();
+        } else {
+          // Show Formspree errors if any
+          let msg = "Oops! Something went wrong.";
+          try {
+            const json = await response.json();
+            if (json && json.errors) {
+              msg = json.errors.map(e => e.message).join(", ");
+            }
+          } catch (_) {}
+          status.textContent = msg;
+        }
+      } catch (err) {
+        status.textContent = "Network error. Please try again.";
+      }
+    });
+  })();
