@@ -60,16 +60,22 @@ modal.addEventListener('click', (e) => {
  
 
 // Sidebar functions
-
 function showSidebar() {
     const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = "flex";
-};
+    sidebar.classList.add('open');
+}
 
 function hideSidebar() {
     const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = "none";
-};
+    sidebar.classList.remove('open');
+}
+
+// Close sidebar on scroll (mobile only)
+document.addEventListener('scroll', () => {
+    if (window.matchMedia("(max-width: 1050px)").matches) {
+        hideSidebar();
+    }
+});
 
 // Smooth scrolling animation effect
 
@@ -139,3 +145,38 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   })();
+
+  // Disable Zoom
+
+   // Prevent pinch zoom
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });
+
+        // Prevent Ctrl + scroll wheel zoom
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent double-tap zoom
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(e) {
+            let now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Close modal on scroll (mobile only)
+document.addEventListener('scroll', () => {
+    if (window.matchMedia("(max-width: 1050px)").matches) {
+        if (modal.style.display === "flex") {
+            modal.style.display = "none";
+        }
+    }
+});
+
+        

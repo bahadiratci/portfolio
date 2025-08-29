@@ -24,11 +24,7 @@ h2 {
     font-family: "Molengo", sans-serif;
 }
 
-nav :first-child {
-    margin-right: auto;
-    padding-left: 35px;
-    font-family: "Molengo", sans-serif;
-}
+
 
 .logo {
     width: 135px;
@@ -46,6 +42,10 @@ nav :first-child {
     }
 
 body {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
     font-family: "Open Sans", serif;
     margin: 0;
     padding: 0;
@@ -60,8 +60,11 @@ body {
 
 nav {
     
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
+  display: flex;
+  justify-content: space-between; /* logo on left, links on right */
+  align-items: center;
+  padding-left: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -75,7 +78,10 @@ nav ul {
 
 nav li {
     height: 50px;
+    font-family: "Molengo", sans-serif;
 }
+
+
 
 nav a {
     height: 100%;
@@ -92,31 +98,61 @@ nav a:hover {
     filter: brightness(2);
 }
 
+/* Sidebar */
 .sidebar {
     font-family: "Molengo", sans-serif;
     position: fixed;
     top: 0;
     right: 0;
-    height: 480px;
-    width: 200px;
+    height: 520px;
+    width: 180px;
     z-index: 999;
-    background-color: rgba(18, 18, 18, 0.952);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    background: linear-gradient(180deg, #1a1a1ae7, #121212);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    transform: translateX(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
     backdrop-filter: blur(15px);
+    border-radius: 0 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start; /* Reset to flex-start for controlled spacing */
+    padding: 10px;
+    padding-top: 34px;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
 .sidebar li {
     width: 100%;
-    
+    margin: 0;
+    flex-grow: 0;
 }
 
 .sidebar a {
-    width: 100%;
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #d18d55;
+    transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
 }
+
+.sidebar a:hover {
+    background: rgba(255, 202, 141, 0.1);
+    color: #ffca8d;
+    padding-left: 25px;
+}
+
+/* Add consistent spacing between links */
+.sidebar li + li {
+    margin-top: 14px; /* Small gap between consecutive links */
+}
+
 
 .menu-button {
     display: none;
@@ -262,6 +298,8 @@ footer {
 
 html {
     scroll-behavior: smooth;
+    touch-action: pan-x pan-y;
+    overflow-x: hidden;
 }
 
 /* Contact Form */
