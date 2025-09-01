@@ -74,6 +74,7 @@ nav ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 12px;
 }
 
 nav li {
@@ -85,7 +86,7 @@ nav li {
 
 nav a {
     height: 100%;
-    padding: 0 20px;
+    padding: 0 18px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -104,7 +105,7 @@ nav a:hover {
     position: fixed;
     top: 0;
     right: 0;
-    height: 520px;
+    height: 624px;
     width: 180px;
     z-index: 999;
     background: linear-gradient(180deg, #1a1a1ae7, #121212);
@@ -112,26 +113,27 @@ nav a:hover {
     transform: translateX(100%);
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
-    backdrop-filter: blur(15px);
     border-radius: 0 0 0 10px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start; /* Reset to flex-start for controlled spacing */
-    padding: 10px;
-    padding-top: 34px;
+    padding-top: 28px;
+    padding-left: 14px;
 }
 
 .sidebar.open {
     transform: translateX(0);
     opacity: 1;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    
 }
 
 .sidebar li {
     width: 100%;
     margin: 0;
     flex-grow: 0;
+    
 }
 
 .sidebar a {
@@ -140,12 +142,14 @@ nav a:hover {
     text-decoration: none;
     color: #d18d55;
     transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+    
 }
 
 .sidebar a:hover {
     background: rgba(255, 202, 141, 0.1);
     color: #ffca8d;
     padding-left: 25px;
+    
 }
 
 /* Add consistent spacing between links */
