@@ -164,7 +164,7 @@ nav a:hover {
 
 }
 
-@media(max-width: 1050px) {
+@media(max-width: 1200px) {
     .hideOnMobile{
         display: none;
     }
@@ -195,7 +195,7 @@ section:nth-child(odd) {
 }
 
 section:nth-child(even) {
-    background: #1d1d1de1;
+    background: #242424e1;
     padding: 15px;
     padding-bottom: 35px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.);
@@ -293,7 +293,7 @@ section:nth-child(even) {
 /* Footer */
 footer {
     text-align: center;
-    background-color: #222222;
+    background: #1b1b1bd2;
     color: white;
     padding-top: 25px;
 }
